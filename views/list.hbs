@@ -1,0 +1,34 @@
+<input id="myInput" type="text" placeholder="Search..">
+
+<table class="table_class" id="tableid">
+  <thead>
+  <tr>
+    <th><h1>name of hotel</h1></th>
+    <th><h1>lat of location </h1></th>
+    <th><h1>long of location</h1></th>
+    <th><h1>id of hotel</h1></th>
+    <th><h1>type of hotel</h1></th>
+    <th><h1>EDIT THE DATA</h1></th>
+
+
+  </tr>
+  </thead>
+
+
+
+
+
+
+  {{#each hotelsdata}}
+    <tr id="tr">
+      <td>{{this.names}}</td>
+      <td>{{this.location.lat}}</td>
+      <td>{{this.location.long}}</td>
+      <td>{{this.id}}</td>
+      <td>{{this.type}}</td>
+      <td><a href="/data">EDIT</a></td>
+
+    </tr>
+  {{/each}}
+
+</table>

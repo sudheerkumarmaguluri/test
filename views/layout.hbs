@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="D:/jquery.twbsPagination.min.js"></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript"  src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+
+    <title>{{title}}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      #myInput {
+    background-image: url('/css/searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+    }
+
+    #tableid {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 18px;
+    }
+
+    #tableid th, #tableid td {
+    text-align: left;
+    padding: 12px;
+    }
+      .wrapper{
+        margin: 60px auto;
+        text-align: center;
+      }
+      h1{
+        margin-bottom: 1.25em;
+      }
+      #pagination-demo{
+        display: inline-block;
+        margin-bottom: 1.75em;
+      }
+      #pagination-demo li{
+        display: inline-block;
+      }
+
+      .page-content{
+        background: #eee;
+        display: inline-block;
+        padding: 10px;
+        width: 100%;
+        max-width: 660px;
+      }
+
+    #tableid tr {
+    border-bottom: 1px solid #ddd;
+    }
+
+    #tableid tr.header, #tableid tr:hover {
+    background-color: #f1f1f1;
+    }
+  </style>
+  </head>
+  <body>
+    {{{body}}}
+    <div id="pageNavPosition"></div>
+
+    <script>
+      var pager;
+
+      $(document).ready(function() {
+        $("#myInput").on("keyup", function () {
+          var value = $(this).val().toLowerCase();
+          $("#tableid tr").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+          });
+        });
+
+
+
+
+      })
+
+
+
+    </script>
+    <script>
+      $(function(){
+        $("#tableid").dataTable();
+
+      })
+    </script>
+
+
+
+
+  </body>
+</html>
